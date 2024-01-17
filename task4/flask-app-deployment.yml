@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-app-deploy
+  labels:
+    app: flask-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-app
+  template:
+    metadata:
+      name: flask-app-pod
+      labels:
+        app: flask-app
+    spec:
+      containers:
+        - name: flask-app-container
+          image: nvrbckdown/flask-app
+
