@@ -1,0 +1,2 @@
+kubectl get pods --selector 'project=practice' -A > output
+
